@@ -1,22 +1,37 @@
 package clarifai-scala
 
+
 // configuration
 object Config {
-	val base_url = "https://api.clarifai.com"
+	val baseURL = "https://api.clarifai.com"
 	val version = "v1"
 }
 
-class ClarifaiClient(clientID: String, clientSecret: String) {
-	val clientID = clientID
-	val clientSecret = clientSecret
+// main client api class
+class ClarifaiClient(id: String, secret: String) {
+	val clientID = id
+	val clientSecret = secret
+	val accessToken: String
+	var throttled = false
 
-
-	def requestAccessToken = {
-		val formData = _encodeUrl(clientID, clientSecret)
+	def _requestAccessToken = {
+		// val formData = _encodeUrl(clientID, clientSecret)
 	}
 
-	def _encodeUrl(clientID: String, clientSecret: String): String = {
-		var str = ""
-		str += "grant_type="
+	def _commonHTTPRequest(): Array[Byte] = {
+		
+	}
+
+	def _buildURL(endpoint: String): String = {
+		val parts = Array(Config.baseURL, Config.version, endpoint)
+		return parts.mkString("/")
+	}
+
+	def _setAccessToken(token: String) = {
+		accessToken = token
+	}
+
+	def _setThrottle(throttle:Boolean) = {
+		throttled = throttle
 	}
 }
