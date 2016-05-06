@@ -16,3 +16,5 @@ import scalaj.http._
 console
 reload
 console
+nsole
+import clarifai._

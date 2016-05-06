@@ -4,7 +4,7 @@ output mode:
 0 -> single
 output directories:
 1 items
-output dir -> /Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes
+output dir -> /Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes
 compile options:
 0 items
 javac options:
@@ -20,19 +20,19 @@ name hashing:
 0 -> true
 products:
 7 items
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/ClarifaiClient.class
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/Config$.class
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/Config.class
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResp$.class
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResp.class
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResults$.class
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResults.class
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/ClarifaiClient.class
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/Config$.class
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/Config.class
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResp$.class
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResp.class
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResults$.class
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResults.class
 binary dependencies:
 4 items
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/rt.jar
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.2.jar
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/kuan-hsuanyeh/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre/lib/rt.jar
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.2.jar
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> /Users/jasminekim/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar
 direct source dependencies:
 0 items
 direct external dependencies:
@@ -51,171 +51,171 @@ inheritance external dependencies:
 0 items
 class names:
 7 items
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.ClarifaiClient
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.Config
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.Config$
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.InfoResp
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.InfoResp$
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.InfoResults
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.InfoResults$
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.ClarifaiClient
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.Config
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.Config$
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.InfoResp
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.InfoResp$
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.InfoResults
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai.InfoResults$
 used names:
 120 items
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> !=
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> &&
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> +
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ->
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> <init>
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ==
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> AbstractFunction12
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> AbstractFunction3
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Any
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> AnyRef
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Array
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Boolean
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ClarifaiClient
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ClassTag
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Config
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Double
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Either
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Http
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> HttpResponse
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> InfoResp
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> InfoResults
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> JSON
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Left
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Map
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> None
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Option
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Predef
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Product
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Right
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ScalaRunTime
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Seq
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Serializable
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Statics
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> String
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _buildURL
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _commonHTTPRequest
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _hashCode
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _requestAccessToken
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _setAccessToken
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _setThrottle
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _toString
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> a
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> accessToken
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> accessToken_=
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> anyHash
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> apiVersion
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> apply
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> asInstanceOf
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> asString
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> b
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> baseURL
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> body
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clientID
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clientSecret
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> code
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> collection
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> data
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> defaultLanguage
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> defaultModel
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> doubleHash
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> endpoint
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> eq
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> err
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> finalizeHash
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> form
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> get
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> header
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> http
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> i
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> id
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> isEmpty
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> isError
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> isInstanceOf
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> json
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> json_body
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> materializeClassTag
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxBatchSize
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxImageBytes
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxImageSize
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxVideoBatchSize
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxVideoBytes
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxVideoDuration
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxVideoSize
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> minImageSize
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> minVideoSize
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> mix
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> mkString
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> package
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> parseFull
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> parsing
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> parts
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> postData
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> postForm
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> refArrayOps
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> req_data
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> response
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> result
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> results
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> retry
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> rmap
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> runtime
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> scala
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> scalaj
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> secret
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> statusCode
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> statusMessage
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> throttle
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> throttled
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> throttled_=
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> toString
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> token
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> typedProductIterator
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> unary_!
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> url
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> util
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> verb
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> version
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> x
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ||
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> !=
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> &&
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> +
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ->
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> <init>
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ==
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> AbstractFunction12
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> AbstractFunction3
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Any
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> AnyRef
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Array
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Boolean
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ClarifaiClient
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ClassTag
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Config
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Double
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Either
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Http
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> HttpResponse
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> InfoResp
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> InfoResults
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> JSON
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Left
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Map
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> None
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Option
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Predef
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Product
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Right
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ScalaRunTime
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Seq
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Serializable
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> Statics
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> String
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _buildURL
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _commonHTTPRequest
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _hashCode
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _requestAccessToken
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _setAccessToken
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _setThrottle
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> _toString
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> a
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> accessToken
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> accessToken_=
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> anyHash
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> apiVersion
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> apply
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> asInstanceOf
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> asString
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> b
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> baseURL
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> body
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clarifai
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clientID
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> clientSecret
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> code
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> collection
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> data
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> defaultLanguage
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> defaultModel
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> doubleHash
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> endpoint
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> eq
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> err
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> finalizeHash
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> form
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> get
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> header
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> http
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> i
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> id
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> isEmpty
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> isError
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> isInstanceOf
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> json
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> json_body
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> materializeClassTag
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxBatchSize
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxImageBytes
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxImageSize
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxVideoBatchSize
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxVideoBytes
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxVideoDuration
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> maxVideoSize
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> minImageSize
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> minVideoSize
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> mix
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> mkString
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> package
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> parseFull
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> parsing
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> parts
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> postData
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> postForm
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> refArrayOps
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> req_data
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> response
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> result
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> results
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> retry
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> rmap
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> runtime
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> scala
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> scalaj
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> secret
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> statusCode
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> statusMessage
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> throttle
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> throttled
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> throttled_=
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> toString
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> token
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> typedProductIterator
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> unary_!
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> url
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> util
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> verb
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> version
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> x
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> ||
 product stamps:
 7 items
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/ClarifaiClient.class -> lastModified(1461400226000)
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/Config$.class -> lastModified(1461400226000)
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/Config.class -> lastModified(1461400226000)
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResp$.class -> lastModified(1461400226000)
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResp.class -> lastModified(1461400226000)
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResults$.class -> lastModified(1461400226000)
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResults.class -> lastModified(1461400226000)
+/Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/ClarifaiClient.class -> lastModified(1461961932000)
+/Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/Config$.class -> lastModified(1461961932000)
+/Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/Config.class -> lastModified(1461961932000)
+/Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResp$.class -> lastModified(1461961932000)
+/Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResp.class -> lastModified(1461961932000)
+/Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResults$.class -> lastModified(1461961932000)
+/Users/jasminekim/Desktop/clarifai-scala/target/scala-2.11/classes/clarifai/InfoResults.class -> lastModified(1461961932000)
 source stamps:
 1 items
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> hash(3826ac60bd3cdb69f710e4a2a03d0d9ced844d15)
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> hash(3826ac60bd3cdb69f710e4a2a03d0d9ced844d15)
 binary stamps:
 4 items
-/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/rt.jar -> lastModified(1399493098000)
-/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.2.jar -> lastModified(1406097935000)
-/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar -> lastModified(1400572938000)
-/Users/kuan-hsuanyeh/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar -> lastModified(1459630353000)
+/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre/lib/rt.jar -> lastModified(1454109346000)
+/Users/jasminekim/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.2.jar -> lastModified(1406097900000)
+/Users/jasminekim/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar -> lastModified(1400572920000)
+/Users/jasminekim/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar -> lastModified(1459632321000)
 class names:
 4 items
-/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/rt.jar -> java.lang.Object
-/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.2.jar -> scala.util.parsing.json.JSON$
-/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar -> scala.runtime.AbstractFunction12
-/Users/kuan-hsuanyeh/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar -> scalaj.http.HttpRequest
+/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre/lib/rt.jar -> java.lang.Object
+/Users/jasminekim/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.2.jar -> scala.util.parsing.json.JSON
+/Users/jasminekim/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar -> scala.Serializable
+/Users/jasminekim/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.3.0.jar -> scalaj.http.Http$
 internal apis:
 1 items
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> 
-rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHBKiHVEAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAARXNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cJU+CGF0AApzdGF0dXNDb2Rlc3EAfgAMQMyZnXQABm5vdGlmeXNxAH4ADB8syZp0AAxtaW5JbWFnZVNpemVzcQB+AAy0ULlZdAAIY2xpZW50SURzcQB+AAxELQCTdAAEd2FpdHNxAH4ADBdcp9d0AA5jb3B5JGRlZmF1bHQkMnNxAH4ADDvVmM90AA0kYXNJbnN0YW5jZU9mc3EAfgAMy/docXQAEG1heFZpZGVvRHVyYXRpb25zcQB+AAyN0f6/dAAOY29weSRkZWZhdWx0JDVzcQB+AAzxYfJZdAAHYmFzZVVSTHNxAH4ADEwfAC10ABFtYXhWaWRlb0JhdGNoU2l6ZXNxAH4ADDHvF1t0AAxwcm9kdWN0QXJpdHlzcQB+AAyPsNKxdAAGZXF1YWxzc3EAfgAMhejbEHQADmNvcHkkZGVmYXVsdCQ5c3EAfgAMSgX3/HQAD2NvcHkkZGVmYXVsdCQxMnNxAH4ADIsQFsx0AA1tYXhJbWFnZUJ5dGVzc3EAfgAMBXIkXXQACXRocm90dGxlZHNxAH4ADHYXumB0AAxhc0luc3RhbmNlT2ZzcQB+AAx+T+kDdAAMc3luY2hyb25pemVkc3EAfgAMvfLyj3QADSRpc0luc3RhbmNlT2ZzcQB+AAxw+B05dAAOY29weSRkZWZhdWx0JDhzcQB+AAz5DofCdAALSW5mb1Jlc3VsdHNzcQB+AAySoWwydAATX3JlcXVlc3RBY2Nlc3NUb2tlbnNxAH4ADHg2eft0AAhjYW5FcXVhbHNxAH4ADK4JZoR0AA5jb3B5JGRlZmF1bHQkNHNxAH4ADE08/+50AAhJbmZvUmVzcHNxAH4ADA7e4Qx0AA1wcm9kdWN0UHJlZml4c3EAfgAMSHgVtnQABGluZm9zcQB+AAzQ8eCndAAJbm90aWZ5QWxsc3EAfgAMCjJSu3QADGlzSW5zdGFuY2VPZnNxAH4ADFZPe6x0AA1tYXhWaWRlb0J5dGVzc3EAfgAMWFeJl3QAB3ZlcnNpb25zcQB+AAyH11YRdAAMbWF4VmlkZW9TaXplc3EAfgAMEKeRlHQABjxpbml0PnNxAH4ADKc3xf10AAZDb25maWdzcQB+AAy/iqw2dAAHcmVzdWx0c3NxAH4ADBgiFFZ0AAxtYXhCYXRjaFNpemVzcQB+AAxC9k3VdAACPT1zcQB+AAxm16ttdAAFY2xvbmVzcQB+AAzDrFoqdAASX2NvbW1vbkhUVFBSZXF1ZXN0c3EAfgAM1Wo6X3QAD19zZXRBY2Nlc3NUb2tlbnNxAH4ADEuJirZ0AA5jb3B5JGRlZmF1bHQkN3NxAH4ADDnIkN10AA9jb3B5JGRlZmF1bHQkMTBzcQB+AAwthqTzdAAMbWF4SW1hZ2VTaXplc3EAfgAMZJ0AZXQACV9idWlsZFVSTHNxAH4ADPIQnZ50AAxtaW5WaWRlb1NpemVzcQB+AAwPzSJPdAAPZGVmYXVsdExhbmd1YWdlc3EAfgAMdPA/mnQADGNsaWVudFNlY3JldHNxAH4ADMd1hwR0AA5jb3B5JGRlZmF1bHQkM3NxAH4ADHBYwDx0AARjb3B5c3EAfgAMgekeD3QACHRvU3RyaW5nc3EAfgAM9zmiHXQADkNsYXJpZmFpQ2xpZW50c3EAfgAMaJOYJHQAAiE9c3EAfgAMmkHoJnQACGdldENsYXNzc3EAfgAMCfV3eXQADmNvcHkkZGVmYXVsdCQxc3EAfgAMFdBk9HQACmFwaVZlcnNpb25zcQB+AAxvwHHFdAANc3RhdHVzTWVzc2FnZXNxAH4ADPbU/KV0AA5jb3B5JGRlZmF1bHQkNnNxAH4ADMfuGTd0AAJuZXNxAH4ADCI09/Z0AA9jb3B5JGRlZmF1bHQkMTFzcQB+AAyYUny0dAACZXFzcQB+AAyN1QV+dAAPcHJvZHVjdEl0ZXJhdG9yc3EAfgAMrs1gznQADGRlZmF1bHRNb2RlbHNxAH4ADNR97JR0AAIjI3NxAH4ADMizw2x0AAhmaW5hbGl6ZXNxAH4ADCZsSSV0AAxfc2V0VGhyb3R0bGVzcQB+AAxUnMI0dAAOcHJvZHVjdEVsZW1lbnRzcQB+AAxKuoTrdAAIaGFzaENvZGVzcQB+AAy9e5fPdAALYWNjZXNzVG9rZW5zcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAAEc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgCheHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAPY2xhcmlmYWkuQ29uZmlndXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4Aunhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AuQBwc3EAfgC+c3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AKFMAAlpbmhlcml0ZWRxAH4AoUwAB3BhcmVudHNxAH4AoXhxAH4AwnNxAH4AuQBwc3EAfgC+dXEAfgCcAAAAAHNxAH4AuQBwc3EAfgC+dXEAfgCcAAAAAHNxAH4AuQBwc3EAfgC+dXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgDBdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgDBc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgDedAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgDfc3EAfgDSdAADQW55c3EAfgDWc3EAfgDZdXEAfgDcAAAAAnNxAH4A3nQABXNjYWxhcQB+AOVzcQB+AJ5xAH4Aq3VxAH4ArAAAAABzcQB+AK4AdAAUY2xhcmlmYWkuSW5mb1Jlc3VsdHN1cQB+ALEAAAAAfnEAfgCzdAAIQ2xhc3NEZWZ1cQB+ALcAAAAAc3EAfgC5AHBzcQB+AL5xAH4Aw3NxAH4AuQBwc3EAfgC+c3EAfgDGc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+ANAAAAAGc3EAfgDSdAAMU2VyaWFsaXphYmxlc3EAfgDWc3EAfgDZdXEAfgDcAAAAAnNxAH4A3nEAfgDscQB+AOVzcQB+ANJxAH4BBHNxAH4A1nNxAH4A2XVxAH4A3AAAAANzcQB+AN5xAH4A4XNxAH4A3nQAAmlvcQB+AOVzcQB+ANJ0AAdQcm9kdWN0cQB+AQVzcQB+ANJ0AAZFcXVhbHNxAH4BBXNxAH4A0nEAfgDVc3EAfgDWc3EAfgDZdXEAfgDcAAAAA3NxAH4A3nEAfgDhc3EAfgDecQB+AONxAH4A5XNxAH4A0nEAfgDncQB+AQVzcQB+AJ5xAH4Aq3VxAH4ArAAAAABzcQB+AK4AdAARY2xhcmlmYWkuSW5mb1Jlc3B1cQB+ALEAAAAAcQB+APJ1cQB+ALcAAAAAc3EAfgC5AHBzcQB+AL5xAH4Aw3NxAH4AuQBwc3EAfgC+c3EAfgDGc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+ANAAAAAGc3EAfgDScQB+AQRzcQB+ANZzcQB+ANl1cQB+ANwAAAACc3EAfgDecQB+AOxxAH4A5XNxAH4A0nEAfgEEc3EAfgDWc3EAfgDZdXEAfgDcAAAAA3NxAH4A3nEAfgDhc3EAfgDedAACaW9xAH4A5XNxAH4A0nEAfgERcQB+ATBzcQB+ANJ0AAZFcXVhbHNxAH4BMHNxAH4A0nEAfgDVc3EAfgDWc3EAfgDZdXEAfgDcAAAAA3NxAH4A3nEAfgDhc3EAfgDecQB+AONxAH4A5XNxAH4A0nEAfgDncQB+ATBzcQB+AJ5xAH4Aq3VxAH4ArAAAAABzcQB+AK4AdAAXY2xhcmlmYWkuQ2xhcmlmYWlDbGllbnR1cQB+ALEAAAAAcQB+APJ1cQB+ALcAAAAAc3EAfgC5AHBzcQB+AL5xAH4Aw3NxAH4AuQBwc3EAfgC+c3EAfgDGc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+ANAAAAACc3EAfgDScQB+ANVzcQB+ANZzcQB+ANl1cQB+ANwAAAADc3EAfgDecQB+AOFzcQB+AN5xAH4A43EAfgDlc3EAfgDScQB+AOdzcQB+ANZzcQB+ANl1cQB+ANwAAAACc3EAfgDecQB+AOxxAH4A5XVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQACGNsYXJpZmFpc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFUQj2iynVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0AEUvVXNlcnMva3Vhbi1oc3VhbnllaC9EZXNrdG9wL2NsYXJpZmFpLXNjYWxhL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABQ4JqxgvTzbafcQ5KKgPQ2c7YRNFQ==
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHBKiHVEAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAARXNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cJU+CGF0AApzdGF0dXNDb2Rlc3EAfgAMQMyZnXQABm5vdGlmeXNxAH4ADB8syZp0AAxtaW5JbWFnZVNpemVzcQB+AAy0ULlZdAAIY2xpZW50SURzcQB+AAxELQCTdAAEd2FpdHNxAH4ADBdcp9d0AA5jb3B5JGRlZmF1bHQkMnNxAH4ADDvVmM90AA0kYXNJbnN0YW5jZU9mc3EAfgAMy/docXQAEG1heFZpZGVvRHVyYXRpb25zcQB+AAyN0f6/dAAOY29weSRkZWZhdWx0JDVzcQB+AAzxYfJZdAAHYmFzZVVSTHNxAH4ADEwfAC10ABFtYXhWaWRlb0JhdGNoU2l6ZXNxAH4ADDHvF1t0AAxwcm9kdWN0QXJpdHlzcQB+AAyPsNKxdAAGZXF1YWxzc3EAfgAMhejbEHQADmNvcHkkZGVmYXVsdCQ5c3EAfgAMSgX3/HQAD2NvcHkkZGVmYXVsdCQxMnNxAH4ADIsQFsx0AA1tYXhJbWFnZUJ5dGVzc3EAfgAMBXIkXXQACXRocm90dGxlZHNxAH4ADHYXumB0AAxhc0luc3RhbmNlT2ZzcQB+AAx+T+kDdAAMc3luY2hyb25pemVkc3EAfgAMvfLyj3QADSRpc0luc3RhbmNlT2ZzcQB+AAxw+B05dAAOY29weSRkZWZhdWx0JDhzcQB+AAz5DofCdAALSW5mb1Jlc3VsdHNzcQB+AAySoWwydAATX3JlcXVlc3RBY2Nlc3NUb2tlbnNxAH4ADHg2eft0AAhjYW5FcXVhbHNxAH4ADK4JZoR0AA5jb3B5JGRlZmF1bHQkNHNxAH4ADE08/+50AAhJbmZvUmVzcHNxAH4ADA7e4Qx0AA1wcm9kdWN0UHJlZml4c3EAfgAMSHgVtnQABGluZm9zcQB+AAzQ8eCndAAJbm90aWZ5QWxsc3EAfgAMCjJSu3QADGlzSW5zdGFuY2VPZnNxAH4ADFZPe6x0AA1tYXhWaWRlb0J5dGVzc3EAfgAMWFeJl3QAB3ZlcnNpb25zcQB+AAyH11YRdAAMbWF4VmlkZW9TaXplc3EAfgAMEKeRlHQABjxpbml0PnNxAH4ADKc3xf10AAZDb25maWdzcQB+AAy/iqw2dAAHcmVzdWx0c3NxAH4ADBgiFFZ0AAxtYXhCYXRjaFNpemVzcQB+AAxC9k3VdAACPT1zcQB+AAxm16ttdAAFY2xvbmVzcQB+AAzDrFoqdAASX2NvbW1vbkhUVFBSZXF1ZXN0c3EAfgAM1Wo6X3QAD19zZXRBY2Nlc3NUb2tlbnNxAH4ADEuJirZ0AA5jb3B5JGRlZmF1bHQkN3NxAH4ADDnIkN10AA9jb3B5JGRlZmF1bHQkMTBzcQB+AAwthqTzdAAMbWF4SW1hZ2VTaXplc3EAfgAMZJ0AZXQACV9idWlsZFVSTHNxAH4ADPIQnZ50AAxtaW5WaWRlb1NpemVzcQB+AAwPzSJPdAAPZGVmYXVsdExhbmd1YWdlc3EAfgAMdPA/mnQADGNsaWVudFNlY3JldHNxAH4ADMd1hwR0AA5jb3B5JGRlZmF1bHQkM3NxAH4ADHBYwDx0AARjb3B5c3EAfgAMgekeD3QACHRvU3RyaW5nc3EAfgAM9zmiHXQADkNsYXJpZmFpQ2xpZW50c3EAfgAMaJOYJHQAAiE9c3EAfgAMmkHoJnQACGdldENsYXNzc3EAfgAMCfV3eXQADmNvcHkkZGVmYXVsdCQxc3EAfgAMFdBk9HQACmFwaVZlcnNpb25zcQB+AAxvwHHFdAANc3RhdHVzTWVzc2FnZXNxAH4ADPbU/KV0AA5jb3B5JGRlZmF1bHQkNnNxAH4ADMfuGTd0AAJuZXNxAH4ADCI09/Z0AA9jb3B5JGRlZmF1bHQkMTFzcQB+AAyYUny0dAACZXFzcQB+AAyN1QV+dAAPcHJvZHVjdEl0ZXJhdG9yc3EAfgAMrs1gznQADGRlZmF1bHRNb2RlbHNxAH4ADNR97JR0AAIjI3NxAH4ADMizw2x0AAhmaW5hbGl6ZXNxAH4ADCZsSSV0AAxfc2V0VGhyb3R0bGVzcQB+AAxUnMI0dAAOcHJvZHVjdEVsZW1lbnRzcQB+AAxKuoTrdAAIaGFzaENvZGVzcQB+AAy9e5fPdAALYWNjZXNzVG9rZW5zcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAAEc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgCheHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAPY2xhcmlmYWkuQ29uZmlndXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4Aunhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AuQBwc3EAfgC+c3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AKFMAAlpbmhlcml0ZWRxAH4AoUwAB3BhcmVudHNxAH4AoXhxAH4AwnNxAH4AuQBwc3EAfgC+dXEAfgCcAAAAAHNxAH4AuQBwc3EAfgC+dXEAfgCcAAAAAHNxAH4AuQBwc3EAfgC+dXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgDBdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgDBc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgDedAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgDfc3EAfgDSdAADQW55c3EAfgDWc3EAfgDZdXEAfgDcAAAAAnNxAH4A3nQABXNjYWxhcQB+AOVzcQB+AJ5xAH4Aq3VxAH4ArAAAAABzcQB+AK4AdAAUY2xhcmlmYWkuSW5mb1Jlc3VsdHN1cQB+ALEAAAAAfnEAfgCzdAAIQ2xhc3NEZWZ1cQB+ALcAAAAAc3EAfgC5AHBzcQB+AL5xAH4Aw3NxAH4AuQBwc3EAfgC+c3EAfgDGc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+ANAAAAAGc3EAfgDSdAAMU2VyaWFsaXphYmxlc3EAfgDWc3EAfgDZdXEAfgDcAAAAAnNxAH4A3nEAfgDscQB+AOVzcQB+ANJxAH4BBHNxAH4A1nNxAH4A2XVxAH4A3AAAAANzcQB+AN5xAH4A4XNxAH4A3nQAAmlvcQB+AOVzcQB+ANJ0AAdQcm9kdWN0cQB+AQVzcQB+ANJ0AAZFcXVhbHNxAH4BBXNxAH4A0nEAfgDVc3EAfgDWc3EAfgDZdXEAfgDcAAAAA3NxAH4A3nEAfgDhc3EAfgDecQB+AONxAH4A5XNxAH4A0nEAfgDncQB+AQVzcQB+AJ5xAH4Aq3VxAH4ArAAAAABzcQB+AK4AdAARY2xhcmlmYWkuSW5mb1Jlc3B1cQB+ALEAAAAAcQB+APJ1cQB+ALcAAAAAc3EAfgC5AHBzcQB+AL5xAH4Aw3NxAH4AuQBwc3EAfgC+c3EAfgDGc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+ANAAAAAGc3EAfgDScQB+AQRzcQB+ANZzcQB+ANl1cQB+ANwAAAACc3EAfgDecQB+AOxxAH4A5XNxAH4A0nEAfgEEc3EAfgDWc3EAfgDZdXEAfgDcAAAAA3NxAH4A3nEAfgDhc3EAfgDedAACaW9xAH4A5XNxAH4A0nEAfgERcQB+ATBzcQB+ANJ0AAZFcXVhbHNxAH4BMHNxAH4A0nEAfgDVc3EAfgDWc3EAfgDZdXEAfgDcAAAAA3NxAH4A3nEAfgDhc3EAfgDecQB+AONxAH4A5XNxAH4A0nEAfgDncQB+ATBzcQB+AJ5xAH4Aq3VxAH4ArAAAAABzcQB+AK4AdAAXY2xhcmlmYWkuQ2xhcmlmYWlDbGllbnR1cQB+ALEAAAAAcQB+APJ1cQB+ALcAAAAAc3EAfgC5AHBzcQB+AL5xAH4Aw3NxAH4AuQBwc3EAfgC+c3EAfgDGc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+AJwAAAAAc3EAfgC5AHBzcQB+AL51cQB+ANAAAAACc3EAfgDScQB+ANVzcQB+ANZzcQB+ANl1cQB+ANwAAAADc3EAfgDecQB+AOFzcQB+AN5xAH4A43EAfgDlc3EAfgDScQB+AOdzcQB+ANZzcQB+ANl1cQB+ANwAAAACc3EAfgDecQB+AOxxAH4A5XVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQACGNsYXJpZmFpc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFUY7ief3VyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0AEIvVXNlcnMvamFzbWluZWtpbS9EZXNrdG9wL2NsYXJpZmFpLXNjYWxhL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABQ4JqxgvTzbafcQ5KKgPQ2c7YRNFQ==
 external apis:
 0 items
 source infos:
 1 items
-/Users/kuan-hsuanyeh/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> 
-AAAAAAAAAAIAAAEAAAA0AEwgICAgICAgIHZhbCBybWFwID0gSlNPTi5wYXJzZUZ1bGwocmVzdWx0KS5nZXQuYXNJbnN0YW5jZU9mW01hcFtTdHJpbmcsIEFueV1dAQAABNgBAAAAEwEAEyAgICAgICAgICAgICAgICAgICABAFIvVXNlcnMva3Vhbi1oc3VhbnllaC9EZXNrdG9wL2NsYXJpZmFpLXNjYWxhL3NyYy9tYWluL3NjYWxhL2NsYXJpZmFpL0NsYXJpZmFpLnNjYWxhAQBSL1VzZXJzL2t1YW4taHN1YW55ZWgvRGVza3RvcC9jbGFyaWZhaS1zY2FsYS9zcmMvbWFpbi9zY2FsYS9jbGFyaWZhaS9DbGFyaWZhaS5zY2FsYQBHb2JqZWN0IEpTT04gaW4gcGFja2FnZSBqc29uIGlzIGRlcHJlY2F0ZWQ6IFRoaXMgb2JqZWN0IHdpbGwgYmUgcmVtb3ZlZC4BAAABAAAAawBkICAgIHZhbCBqc29uX2JvZHk6TWFwW1N0cmluZyxBbnldID0gSlNPTi5wYXJzZUZ1bGwocmVzcG9uc2UuYm9keSkuZ2V0LmFzSW5zdGFuY2VPZltNYXBbU3RyaW5nLCBBbnldXQEAAA3FAQAAACQBACQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICABAFIvVXNlcnMva3Vhbi1oc3VhbnllaC9EZXNrdG9wL2NsYXJpZmFpLXNjYWxhL3NyYy9tYWluL3NjYWxhL2NsYXJpZmFpL0NsYXJpZmFpLnNjYWxhAQBSL1VzZXJzL2t1YW4taHN1YW55ZWgvRGVza3RvcC9jbGFyaWZhaS1zY2FsYS9zcmMvbWFpbi9zY2FsYS9jbGFyaWZhaS9DbGFyaWZhaS5zY2FsYQBHb2JqZWN0IEpTT04gaW4gcGFja2FnZSBqc29uIGlzIGRlcHJlY2F0ZWQ6IFRoaXMgb2JqZWN0IHdpbGwgYmUgcmVtb3ZlZC4B
+/Users/jasminekim/Desktop/clarifai-scala/src/main/scala/clarifai/Clarifai.scala -> 
+AAAAAAAAAAIAAAEAAAA0AEwgICAgICAgIHZhbCBybWFwID0gSlNPTi5wYXJzZUZ1bGwocmVzdWx0KS5nZXQuYXNJbnN0YW5jZU9mW01hcFtTdHJpbmcsIEFueV1dAQAABNgBAAAAEwEAEyAgICAgICAgICAgICAgICAgICABAE8vVXNlcnMvamFzbWluZWtpbS9EZXNrdG9wL2NsYXJpZmFpLXNjYWxhL3NyYy9tYWluL3NjYWxhL2NsYXJpZmFpL0NsYXJpZmFpLnNjYWxhAQBPL1VzZXJzL2phc21pbmVraW0vRGVza3RvcC9jbGFyaWZhaS1zY2FsYS9zcmMvbWFpbi9zY2FsYS9jbGFyaWZhaS9DbGFyaWZhaS5zY2FsYQBHb2JqZWN0IEpTT04gaW4gcGFja2FnZSBqc29uIGlzIGRlcHJlY2F0ZWQ6IFRoaXMgb2JqZWN0IHdpbGwgYmUgcmVtb3ZlZC4BAAABAAAAawBkICAgIHZhbCBqc29uX2JvZHk6TWFwW1N0cmluZyxBbnldID0gSlNPTi5wYXJzZUZ1bGwocmVzcG9uc2UuYm9keSkuZ2V0LmFzSW5zdGFuY2VPZltNYXBbU3RyaW5nLCBBbnldXQEAAA3FAQAAACQBACQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICABAE8vVXNlcnMvamFzbWluZWtpbS9EZXNrdG9wL2NsYXJpZmFpLXNjYWxhL3NyYy9tYWluL3NjYWxhL2NsYXJpZmFpL0NsYXJpZmFpLnNjYWxhAQBPL1VzZXJzL2phc21pbmVraW0vRGVza3RvcC9jbGFyaWZhaS1zY2FsYS9zcmMvbWFpbi9zY2FsYS9jbGFyaWZhaS9DbGFyaWZhaS5zY2FsYQBHb2JqZWN0IEpTT04gaW4gcGFja2FnZSBqc29uIGlzIGRlcHJlY2F0ZWQ6IFRoaXMgb2JqZWN0IHdpbGwgYmUgcmVtb3ZlZC4B
 compilations:
-51 items
+52 items
 00 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVD9oPdZ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAPi9Vc2Vycy9rdWFuLWhzdWFueWVoL0Rlc2t0b3AvdHdpdHRlci90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
 01 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVD+3kCl1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQARS9Vc2Vycy9rdWFuLWhzdWFueWVoL0Rlc2t0b3AvY2xhcmlmYWktc2NhbGEvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=
 02 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVD+6JsB1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQARS9Vc2Vycy9rdWFuLWhzdWFueWVoL0Rlc2t0b3AvY2xhcmlmYWktc2NhbGEvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=
@@ -267,3 +267,4 @@ compilations:
 48 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVEI1C3F1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQARS9Vc2Vycy9rdWFuLWhzdWFueWVoL0Rlc2t0b3AvY2xhcmlmYWktc2NhbGEvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=
 49 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVEI7ZWN1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQARS9Vc2Vycy9rdWFuLWhzdWFueWVoL0Rlc2t0b3AvY2xhcmlmYWktc2NhbGEvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=
 50 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVEI9osp1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQARS9Vc2Vycy9rdWFuLWhzdWFueWVoL0Rlc2t0b3AvY2xhcmlmYWktc2NhbGEvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=
+51 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABVGO4nn91cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQi9Vc2Vycy9qYXNtaW5la2ltL0Rlc2t0b3AvY2xhcmlmYWktc2NhbGEvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=

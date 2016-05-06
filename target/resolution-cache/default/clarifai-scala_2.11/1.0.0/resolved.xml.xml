@@ -4,7 +4,7 @@
 		module="clarifai-scala_2.11"
 		revision="1.0.0"
 		status="integration"
-		publication="20160422173217"
+		publication="20160429133152"
 	>
 		<description>
 		clarifai-scala

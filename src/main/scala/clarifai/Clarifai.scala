@@ -10,24 +10,58 @@ object Config {
 }
 
 // case classes for representing JSON requests and responses
+// info endpoint
 case class InfoResults(
-        maxImageSize: Double,
-        defaultLanguage: String,
-        maxVideoSize: Double,
-        maxImageBytes: Double,
-        minImageSize: Double,
-        defaultModel: String,
-        maxVideoBytes: Double,
-        maxVideoDuration: Double,
-        maxBatchSize: Double,
-        maxVideoBatchSize: Double,
-        minVideoSize: Double,
-        apiVersion: Double
+  maxImageSize: Double,
+  defaultLanguage: String,
+  maxVideoSize: Double,
+  maxImageBytes: Double,
+  minImageSize: Double,
+  defaultModel: String,
+  maxVideoBytes: Double,
+  maxVideoDuration: Double,
+  maxBatchSize: Double,
+  maxVideoBatchSize: Double,
+  minVideoSize: Double,
+  apiVersion: Double
 )
 case class InfoResp(
-        statusCode: String,
-        statusMessage: String,
-        results: InfoResults
+  statusCode: String,
+  statusMessage: String,
+  results: InfoResults
+)
+
+// tag endpoint
+case class TagResp(
+  statusCode: String,
+  statusMessage: String,
+  meta: TagMeta,
+  results: TagResults
+)
+case class TagMeta(
+  tag: TagMetaTag
+)
+case class TagMetaTag(
+  timestamp: Double,
+  model: String,
+  config: String
+)
+case class TagResults(
+  docid: Double,
+  url: String,
+  statusCode: String,
+  statusMessage: String,
+  localId: String,
+  result: TagResultsRes,
+  docidStr: String
+)
+case class TagResultsRes(
+  tag: TagResultsResTag
+)
+case class TagResultsResTag(
+  conceptIds: Array[String],
+  classes: Array[String],
+  probs: Array[Double]
 )
 
 // main client api class
@@ -77,16 +111,51 @@ class ClarifaiClient(id: String, secret: String) {
   }
 
   // TAG - TODO
-  // def tag(): Either[Option[String], Array[Byte]] = {
-  //   val response = _commonHTTPRequest(None, "tag", "POST", false)
-  //   // check if received error
-  //   response match {
-  //     case Left(err) => Left(err)
-  //     case Right(result) => {
-  //       // do something...
-  //     }
-  //   }
-  // }
+  def tag(): Either[Option[String], TagResp] = {
+    val response = _commonHTTPRequest(None, "tag", "POST", false)
+    // check if received error
+    response match {
+      case Left(err) => Left(err)
+      case Right(result) => {
+        val rmap = JSON.parseFull(result).get.asInstanceOf[Array[Any]]
+          val meta = rmap.get("meta").get.asInstanceOf[Map[String, Any]]
+            val meta_tag = meta.get("tag").get.asInstanceOf[Map[String, Any]]
+
+          val results = rmap.get("results").get.asInstanceOf[Map[String, Any]]
+            val result = results.get("result").get.asInstanceOf[Map[String, Any]]
+              val res_tag = result.get("tag").get.asInstanceOf[Map[String, Any]]
+
+        Right(
+          TagResp(
+            rmap.get("status_code").get.asInstanceOf[String],
+            rmap.get("status_msg").get.asInstanceOf[String],
+            TagMeta(
+              TagMetaTag(
+                meta_tag.get("timestamp").get.asInstanceOf[Double],
+                meta_tag.get("model").get.asInstanceOf[String],
+                meta_tag.get("config").get.asInstanceOf[String]
+              )
+            ),
+            TagResults(
+              results.get("docid").get.asInstanceOf[Double],
+              results.get("url").get.asInstanceOf[String],
+              results.get("status_code").get.asInstanceOf[String],
+              results.get("status_msg").get.asInstanceOf[String],
+              results.get("local_id").get.asInstanceOf[String],
+              TagResultsRes(
+                TagResultsResTag(
+                  res_tag.get("concept_ids").get.asInstanceOf[Array[String]],
+                  res_tag.get("classes").get.asInstanceOf[Array[String]],
+                  res_tag.get("probs").get.asInstanceOf[Array[Double]]
+                )
+              ),
+              results.get("docid_str").get.asInstanceOf[String]
+            )
+          )
+        )
+      }
+    }
+  }
 
   /** Helper functions to handle HTTP requests and responses
     * Clients should not invoke these functions explicitly
