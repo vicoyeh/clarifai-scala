@@ -10,24 +10,61 @@ object Config {
 }
 
 // case classes for representing JSON requests and responses
+// info endpoint
 case class InfoResults(
-        maxImageSize: Double,
-        defaultLanguage: String,
-        maxVideoSize: Double,
-        maxImageBytes: Double,
-        minImageSize: Double,
-        defaultModel: String,
-        maxVideoBytes: Double,
-        maxVideoDuration: Double,
-        maxBatchSize: Double,
-        maxVideoBatchSize: Double,
-        minVideoSize: Double,
-        apiVersion: Double
+  maxImageSize: Double,
+  defaultLanguage: String,
+  maxVideoSize: Double,
+  maxImageBytes: Double,
+  minImageSize: Double,
+  defaultModel: String,
+  maxVideoBytes: Double,
+  maxVideoDuration: Double,
+  maxBatchSize: Double,
+  maxVideoBatchSize: Double,
+  minVideoSize: Double,
+  apiVersion: Double
 )
 case class InfoResp(
-        statusCode: String,
-        statusMessage: String,
-        results: InfoResults
+  statusCode: String,
+  statusMessage: String,
+  results: InfoResults
+)
+
+// tag endpoint
+case class TagResp(
+  statusCode: String,
+  statusMessage: String,
+  meta: TagMeta,
+  results: TagResults
+)
+case class TagMeta(
+  tag: TagMetaTag
+)
+case class TagMetaTag(
+  timestamp: Double,
+  model: String,
+  config: String
+)
+case class TagResults(
+  result: Array[TagResult]
+)
+case class TagResult(
+  docid: Double,
+  url: String,
+  statusCode: String,
+  statusMessage: String,
+  localId: String,
+  result: TagResultRes,
+  docidStr: String
+)
+case class TagResultRes(
+  tag: TagResultResTag
+)
+case class TagResultResTag(
+  conceptIds: Array[String],
+  classes: Array[String],
+  probs: Array[Double]
 )
 
 // main client api class
@@ -44,7 +81,6 @@ class ClarifaiClient(id: String, secret: String) {
   // INFO
   def info(): Either[Option[String], InfoResp] = {
     val response = _commonHTTPRequest(None, "info", "GET", false)
-    // check if received error
     
     response match {
       case Left(err) => Left(err)
@@ -76,17 +112,72 @@ class ClarifaiClient(id: String, secret: String) {
     }
   }
 
-  // TAG - TODO
-  // def tag(): Either[Option[String], Array[Byte]] = {
-  //   val response = _commonHTTPRequest(None, "tag", "POST", false)
-  //   // check if received error
-  //   response match {
-  //     case Left(err) => Left(err)
-  //     case Right(result) => {
-  //       // do something...
-  //     }
-  //   }
-  // }
+  // TAG
+  def tag(urls: Array[String]): Either[Option[String], TagResp] = {
+    // needs at least one url
+    if (urls.length < 1 ) {
+      return Left(Some("Needs at least one url"))
+    }
+
+    // convert urls array to string
+    var data = ""
+    for (str <- urls) {
+      data = data.concat("url=" + str + "&")
+    }
+    data = data.dropRight(1) // remove the last "&" character
+    val response = _commonHTTPRequest(Some(data), "tag", "POST", false)
+
+    response match {
+      case Left(err) => Left(err)
+      case Right(result) => {
+        val rmap = JSON.parseFull(result).get.asInstanceOf[Map[String, Any]]
+        val meta = rmap.get("meta").get.asInstanceOf[Map[String, Any]]
+        val meta_tag = meta.get("tag").get.asInstanceOf[Map[String, Any]]
+
+        val results = rmap.get("results").get.asInstanceOf[Array[Map[String, Any]]]
+        var resultsArr = Array[TagResult]()
+        // access every item in the results array
+        for ( item <- results ) {
+          val res = item.get("result").get.asInstanceOf[Map[String, Any]]
+          val res_tag = res.get("tag").get.asInstanceOf[Map[String, Any]]
+
+          val tResult:TagResult = TagResult(
+            item.get("docid").get.asInstanceOf[Double],
+            item.get("url").get.asInstanceOf[String],
+            item.get("status_code").get.asInstanceOf[String],
+            item.get("status_msg").get.asInstanceOf[String],
+            item.get("local_id").get.asInstanceOf[String],
+            TagResultRes(
+              TagResultResTag(
+                res_tag.get("concept_ids").get.asInstanceOf[Array[String]],
+                res_tag.get("classes").get.asInstanceOf[Array[String]],
+                res_tag.get("probs").get.asInstanceOf[Array[Double]]
+              )
+            ),
+            item.get("docid_str").get.asInstanceOf[String]
+          )
+          // add to the results array
+          resultsArr :+ tResult
+        }
+
+        // response object
+        Right(
+          TagResp(
+            rmap.get("status_code").get.asInstanceOf[String],
+            rmap.get("status_msg").get.asInstanceOf[String],
+            TagMeta(
+              TagMetaTag(
+                meta_tag.get("timestamp").get.asInstanceOf[Double],
+                meta_tag.get("model").get.asInstanceOf[String],
+                meta_tag.get("config").get.asInstanceOf[String]
+              )
+            ),
+            TagResults(resultsArr)
+          )
+        )
+      }
+    }
+  }
 
   /** Helper functions to handle HTTP requests and responses
     * Clients should not invoke these functions explicitly
@@ -121,13 +212,17 @@ class ClarifaiClient(id: String, secret: String) {
       case None => ""
     }
 
+    // transform req_data to json data
+    // val json_data = TODO
+
     val url = _buildURL(endpoint)
     var response: HttpResponse[String] = null
     verb match {
       case "POST" => {
-        response = Http(url).postData(req_data)
+        val place_holder = "{\"url\":[\"http://www.clarifai.com/img/metro-north.jpg\"]}"
+        response = Http(url).postData(place_holder)
                         .header("Authorization", ("Bearer " + accessToken))
-                        .header("content-type", "application/x-www-form-urlencoded")
+                        .header("content-type", "application/json")
                         .asString
       }
       case "GET" => {
@@ -137,7 +232,8 @@ class ClarifaiClient(id: String, secret: String) {
         return Left(Some("ILLEGAL_VERB"))
       }
     }
-
+    
+    println(response)
     // match http response code to specific functions
     response.code match {
       case 200|201 => {

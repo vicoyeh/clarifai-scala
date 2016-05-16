@@ -7,15 +7,15 @@
 		revision="1.0.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160422173217"/>
+		date="20160506014855"/>
 	<dependencies>
 		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.11">
-			<revision name="1.0.2" status="release" pubdate="20140722234535" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="2">
+			<revision name="1.0.2" status="release" pubdate="20140722234535" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="2">
 				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="successful" details="" size="2156" time="43" location="/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/ivy-1.0.2.xml" searched="true" original-local-location="/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/ivy-1.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.2/scala-parser-combinators_2.11-1.0.2.pom"/>
+				<metadata-artifact status="no" details="" size="2803" time="0" location="/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.2/scala-parser-combinators_2.11-1.0.2.pom"/>
 				<caller organisation="default" name="clarifai-scala_2.11" conf="optional, compile, runtime, runtime-internal" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="scala-parser-combinators_2.11" type="bundle" ext="jar" status="successful" details="" size="416065" time="95" location="/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.2.jar">
+					<artifact name="scala-parser-combinators_2.11" type="bundle" ext="jar" status="no" details="" size="416065" time="0" location="/Users/kuan-hsuanyeh/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.2/scala-parser-combinators_2.11-1.0.2.jar"/>
 					</artifact>
 				</artifacts>
