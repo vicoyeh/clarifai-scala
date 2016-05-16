@@ -47,7 +47,7 @@ case class TagMetaTag(
   config: String
 )
 case class TagResults(
-  result: Array[TagResult]
+  result: List[TagResult]
 )
 case class TagResult(
   docid: Double,
@@ -62,9 +62,8 @@ case class TagResultRes(
   tag: TagResultResTag
 )
 case class TagResultResTag(
-  conceptIds: Array[String],
-  classes: Array[String],
-  probs: Array[Double]
+  classes: List[String],
+  probs: List[Double]
 )
 
 // main client api class
@@ -134,10 +133,10 @@ class ClarifaiClient(id: String, secret: String) {
         val meta = rmap.get("meta").get.asInstanceOf[Map[String, Any]]
         val meta_tag = meta.get("tag").get.asInstanceOf[Map[String, Any]]
 
-        val results = rmap.get("results").get.asInstanceOf[Array[Map[String, Any]]]
-        var resultsArr = Array[TagResult]()
+        val results = rmap.get("results").get.asInstanceOf[List[Map[String, Any]]]
+        var resultsArr = List[TagResult]()
         // access every item in the results array
-        for ( item <- results ) {
+        results.foreach((item: Map[String, Any]) => {
           val res = item.get("result").get.asInstanceOf[Map[String, Any]]
           val res_tag = res.get("tag").get.asInstanceOf[Map[String, Any]]
 
@@ -149,16 +148,16 @@ class ClarifaiClient(id: String, secret: String) {
             item.get("local_id").get.asInstanceOf[String],
             TagResultRes(
               TagResultResTag(
-                res_tag.get("concept_ids").get.asInstanceOf[Array[String]],
-                res_tag.get("classes").get.asInstanceOf[Array[String]],
-                res_tag.get("probs").get.asInstanceOf[Array[Double]]
+                res_tag.get("classes").get.asInstanceOf[List[String]],
+                res_tag.get("probs").get.asInstanceOf[List[Double]]
               )
             ),
             item.get("docid_str").get.asInstanceOf[String]
           )
+
           // add to the results array
-          resultsArr :+ tResult
-        }
+          resultsArr :::= List(tResult)
+        })
 
         // response object
         Right(
@@ -219,10 +218,10 @@ class ClarifaiClient(id: String, secret: String) {
     var response: HttpResponse[String] = null
     verb match {
       case "POST" => {
-        val place_holder = "{\"url\":[\"http://www.clarifai.com/img/metro-north.jpg\"]}"
-        response = Http(url).postData(place_holder)
+        //val place_holder = "{\"url\":[\"http://www.clarifai.com/img/metro-north.jpg\"]}"
+        response = Http(url).postData(req_data)
                         .header("Authorization", ("Bearer " + accessToken))
-                        .header("content-type", "application/json")
+                        .header("content-type", "application/x-www-form-urlencoded")
                         .asString
       }
       case "GET" => {
@@ -233,7 +232,8 @@ class ClarifaiClient(id: String, secret: String) {
       }
     }
     
-    println(response)
+    // for debugging purpose; check http response
+    // println(response)
     // match http response code to specific functions
     response.code match {
       case 200|201 => {
