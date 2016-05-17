@@ -9,63 +9,6 @@ object Config {
   val version = "v1"
 }
 
-// case classes for representing JSON requests and responses
-// info endpoint
-case class InfoResults(
-  maxImageSize: Double,
-  defaultLanguage: String,
-  maxVideoSize: Double,
-  maxImageBytes: Double,
-  minImageSize: Double,
-  defaultModel: String,
-  maxVideoBytes: Double,
-  maxVideoDuration: Double,
-  maxBatchSize: Double,
-  maxVideoBatchSize: Double,
-  minVideoSize: Double,
-  apiVersion: Double
-)
-case class InfoResp(
-  statusCode: String,
-  statusMessage: String,
-  results: InfoResults
-)
-
-// tag endpoint
-case class TagResp(
-  statusCode: String,
-  statusMessage: String,
-  meta: TagMeta,
-  results: TagResults
-)
-case class TagMeta(
-  tag: TagMetaTag
-)
-case class TagMetaTag(
-  timestamp: Double,
-  model: String,
-  config: String
-)
-case class TagResults(
-  result: List[TagResult]
-)
-case class TagResult(
-  docid: Double,
-  url: String,
-  statusCode: String,
-  statusMessage: String,
-  localId: String,
-  result: TagResultRes,
-  docidStr: String
-)
-case class TagResultRes(
-  tag: TagResultResTag
-)
-case class TagResultResTag(
-  classes: List[String],
-  probs: List[Double]
-)
-
 // main client api class
 class ClarifaiClient(id: String, secret: String) {
   val clientID = id
@@ -111,19 +54,68 @@ class ClarifaiClient(id: String, secret: String) {
     }
   }
 
+  // USAGE
+  def usage(): Either[Option[String], UsageResp] = {
+    val response = _commonHTTPRequest(None, "usage", "GET", false)
+    
+    response match {
+      case Left(err) => Left(err)
+      case Right(result) => {
+        val rmap = JSON.parseFull(result).get.asInstanceOf[Map[String, Any]]
+        val results = rmap.get("results").get.asInstanceOf[Map[String, Any]]
+        
+        var utArr = List[UsageResultUT]()
+        // parse user throttles
+        val uThrottles = results.get("user_throttles").get.asInstanceOf[List[Map[String, Any]]]
+        uThrottles.foreach((item: Map[String, Any]) => {
+          val uThrottle:UsageResultUT = UsageResultUT(
+            item.get("name").get.asInstanceOf[String],
+            item.get("consumed").get.asInstanceOf[Double],
+            item.get("consumed_percentage").get.asInstanceOf[Double],
+            item.get("limit").get.asInstanceOf[Double],
+            item.get("units").get.asInstanceOf[String],
+            item.get("wait").get.asInstanceOf[Double]
+          )
+          utArr :::= List(uThrottle)
+        })
+
+        Right(
+          UsageResp(
+            rmap.get("status_code").get.asInstanceOf[String],
+            rmap.get("status_msg").get.asInstanceOf[String],
+            UsageResults(
+              utArr,
+              results.get("app_throttles").get.asInstanceOf[Map[String, Any]]
+            )
+          )
+        )
+      }
+    }
+  }
+
   // TAG
-  def tag(urls: Array[String]): Either[Option[String], TagResp] = {
+  def tag(infoReq: Map[String, Any]): Either[Option[String], TagResp] = {
     // needs at least one url
-    if (urls.length < 1 ) {
+    if (!infoReq.contains("urls") || infoReq.get("urls").get.asInstanceOf[Array[String]].length < 1 ) {
       return Left(Some("Needs at least one url"))
     }
 
-    // convert urls array to string
     var data = ""
-    for (str <- urls) {
+    // check for model parameter
+    if (infoReq.contains("model")) {
+      data = data.concat("model=" + infoReq.get("model").get.asInstanceOf[String] + "&")
+    }
+    // check for language paramter
+    if (infoReq.contains("language")) {
+      data = data.concat("language=" + infoReq.get("language").get.asInstanceOf[String] + "&")
+    }
+    // TODO: select classes
+    // convert urls array into string
+    for (str <- infoReq.get("urls").get.asInstanceOf[Array[String]]) {
       data = data.concat("url=" + str + "&")
     }
     data = data.dropRight(1) // remove the last "&" character
+
     val response = _commonHTTPRequest(Some(data), "tag", "POST", false)
 
     response match {
@@ -171,7 +163,7 @@ class ClarifaiClient(id: String, secret: String) {
                 meta_tag.get("config").get.asInstanceOf[String]
               )
             ),
-            TagResults(resultsArr)
+            resultsArr
           )
         )
       }
@@ -211,14 +203,10 @@ class ClarifaiClient(id: String, secret: String) {
       case None => ""
     }
 
-    // transform req_data to json data
-    // val json_data = TODO
-
     val url = _buildURL(endpoint)
     var response: HttpResponse[String] = null
     verb match {
       case "POST" => {
-        //val place_holder = "{\"url\":[\"http://www.clarifai.com/img/metro-north.jpg\"]}"
         response = Http(url).postData(req_data)
                         .header("Authorization", ("Bearer " + accessToken))
                         .header("content-type", "application/x-www-form-urlencoded")
@@ -234,6 +222,7 @@ class ClarifaiClient(id: String, secret: String) {
     
     // for debugging purpose; check http response
     // println(response)
+
     // match http response code to specific functions
     response.code match {
       case 200|201 => {

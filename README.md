@@ -6,8 +6,24 @@ sbt console
 ```scala
 import clarifai._
 val client = new  ClarifaiClient("<client_id>", "<client_secret>")
-val ret = client.info()
-val result:InfoResp = ret match {
+
+// info endpoint
+val infoRet = client.info()
+val info:InfoResp = infoRet match {
+	case Left(err) => null
+	case Right(res) => res
+}
+
+// tag endpoint
+val tagRet = client.tag(Map("urls" -> Array("http://www.clarifai.com/img/metro-north.jpg","http://www.clarifai.com/img/metro-north.jpg"), "model" -> "nsfw-v1.0", "lang" -> "en"))
+val tag:TagResp = tagRet match {
+	case Left(err) => null
+	case Right(res) => res
+}
+
+// usage endpoint
+val usageRet = client.usage()
+val usage:UsageResp = usageRet match {
 	case Left(err) => null
 	case Right(res) => res
 }
