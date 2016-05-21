@@ -19,6 +19,90 @@ class ClarifaiClient(id: String, secret: String) {
   /** Main Clarifai endpoints
     * 
     */
+/*
+response match {
+      case Left(err) => Left(err)
+      case Right(result) => {
+        val rmap = JSON.parseFull(result).get.asInstanceOf[Map[String, Any]]
+        val meta = rmap.get("meta").get.asInstanceOf[Map[String, Any]]
+        val meta_tag = meta.get("tag").get.asInstanceOf[Map[String, Any]]
+
+        val results = rmap.get("results").get.asInstanceOf[List[Map[String, Any]]]
+        var resultsArr = List[TagResult]()
+        // access every item in the results array
+        results.foreach((item: Map[String, Any]) => {
+          val res = item.get("result").get.asInstanceOf[Map[String, Any]]
+          val res_tag = res.get("tag").get.asInstanceOf[Map[String, Any]]
+
+          val tResult:TagResult = TagResult(
+            item.get("docid").get.asInstanceOf[Double],
+            item.get("url").get.asInstanceOf[String],
+            item.get("status_code").get.asInstanceOf[String],
+            item.get("status_msg").get.asInstanceOf[String],
+            item.get("local_id").get.asInstanceOf[String],
+            TagResultRes(
+              TagResultResTag(
+                res_tag.get("concept_ids").get.asInstanceOf[List[String]],
+                res_tag.get("classes").get.asInstanceOf[List[String]],
+                res_tag.get("probs").get.asInstanceOf[List[Double]]
+              )
+            ),
+            item.get("docid_str").get.asInstanceOf[String]
+          )
+
+          // add to the results array
+          resultsArr :::= List(tResult)
+        })
+*/
+  // COLOR
+  def color(): Either[Option[String], ColorResp] = {
+    val response = _commonHTTPRequest(None, "color", "POST", false)
+    
+    response match {
+      case Left(err) => Left(err)
+      case Right(result) => {
+        val rmap = JSON.parseFull(result).get.asInstanceOf[Map[String, Any]]
+        val results = rmap.get("results").get.asInstanceOf[List[Map[String, Any]]]
+        val resultsArr = List[ColorResults]()
+        
+        results.foreach((itemR: Map[String, Any]) => {
+          val colors = itemR.get("colors").get.asInstanceOf[List[Map[String, Any]]]
+          val colorsArr = List[ResultsColors]()
+
+          val cResult:ColorResults = ColorResults(
+            itemR.get("docid").get.asInstanceOf[Double],
+            itemR.get("url").get.asInstanceOf[String],
+            itemR.get("docid_str").get.asInstanceOf[String],
+              
+            colors.foreach((itemC: Map[String, Any]) => {
+              val w3c_color = itemC.get("w3c").get.asInstanceOf[Map[String, Any]]
+              
+              val rColor:ResultsColors = ResultsColors(
+                Colorw3c(
+                  w3c_color.get("hex").get.asInstanceOf[String],
+                  w3c_color.get("name").get.asInstanceOf[String]
+                ),
+                itemC.get("hex").get.asInstanceOf[String],
+                itemC.get("density").get.asInstanceOf[Double]
+              )
+              colorsArr :::= List(rColor)
+            })
+
+          )
+
+          resultsArr :::= List(cResult)
+        })
+
+        Right(
+          ColorResp(
+            rmap.get("status_code").get.asInstanceOf[String],
+            rmap.get("status_msg").get.asInstanceOf[String],
+            resultsArr
+          )
+        )
+      }
+    }
+  }
 
   // INFO
   def info(): Either[Option[String], InfoResp] = {
@@ -127,6 +211,7 @@ class ClarifaiClient(id: String, secret: String) {
 
         val results = rmap.get("results").get.asInstanceOf[List[Map[String, Any]]]
         var resultsArr = List[TagResult]()
+        
         // access every item in the results array
         results.foreach((item: Map[String, Any]) => {
           val res = item.get("result").get.asInstanceOf[Map[String, Any]]
@@ -140,6 +225,7 @@ class ClarifaiClient(id: String, secret: String) {
             item.get("local_id").get.asInstanceOf[String],
             TagResultRes(
               TagResultResTag(
+                res_tag.get("concept_ids").get.asInstanceOf[List[String]],
                 res_tag.get("classes").get.asInstanceOf[List[String]],
                 res_tag.get("probs").get.asInstanceOf[List[Double]]
               )
