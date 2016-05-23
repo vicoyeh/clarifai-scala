@@ -4,31 +4,6 @@ package clarifai
  * case classes for representing JSON requests and responses
  */
 
-// color endpoint
-case class ColorResp(
-  statusCode: String,
-  statusMessage: String,
-  results: List[ColorResults]
-)
-
-case class ColorResults(
-  docid: Double,
-  url: String,
-  docidStr: String,
-  colors: List[ResultsColors]
-)
-
-case class ResultsColors(
-  w3c: Colorw3c,
-  hex: String,
-  density: Double
-)
-
-case class Colorw3c(
-  hex: String,
-  name: String
-)
-
 // info endpoint
 case class InfoResults(
   maxImageSize: Double,
@@ -100,4 +75,26 @@ case class UsageResultUT(
   limit: Double,
   units: String,
   waitTime: Double
+)
+
+// color endpoint
+case class ColorResp(
+  statusCode: String,
+  statusMessage: String,
+  results: List[ColorResults]
+)
+case class ColorResults(
+  docid: Double,
+  url: String,
+  docidStr: String,
+  colors: List[ResultsColors]
+)
+case class ResultsColors(
+  w3c: Colorw3c,
+  hex: String,
+  density: Double
+)
+case class Colorw3c(
+  hex: String,
+  name: String
 )
