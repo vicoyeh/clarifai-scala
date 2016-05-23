@@ -15,6 +15,7 @@ val info:InfoResp = infoRet match {
 }
 
 // tag endpoint
+// model and lang parameters are optional
 val tagRet = client.tag(Map(
 						"urls" -> Array("http://www.clarifai.com/img/metro-north.jpg",
 										"http://www.clarifai.com/img/metro-north.jpg"), 

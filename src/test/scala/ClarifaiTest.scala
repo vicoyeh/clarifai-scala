@@ -1,7 +1,5 @@
 import clarifai._
 
-
-
 object Test {
 	val id = ""
 	val secret = ""
