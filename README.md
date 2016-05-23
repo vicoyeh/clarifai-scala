@@ -15,8 +15,10 @@ val info:InfoResp = infoRet match {
 }
 
 // tag endpoint
-val tagRet = client.tag(Map("urls" -> Array("http://www.clarifai.com/img/metro-north.jpg","http://www.clarifai.com/img/metro-north.jpg"), <br />
-						"model" -> "nsfw-v1.0", <br />
+val tagRet = client.tag(Map(
+						"urls" -> Array("http://www.clarifai.com/img/metro-north.jpg",
+										"http://www.clarifai.com/img/metro-north.jpg"), 
+						"model" -> "nsfw-v1.0",
 						"lang" -> "en"))
 val tag:TagResp = tagRet match {
 	case Left(err) => null
