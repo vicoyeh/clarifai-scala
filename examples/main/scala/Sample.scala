@@ -17,10 +17,10 @@ object Sample extends App {
 	// tag endpoint
 	// model and lang parameters are optional
 	val tagRet = client.tag(Map(
-							"urls" -> Array("http://www.clarifai.com/img/metro-north.jpg",
-											"http://www.clarifai.com/img/metro-north.jpg"), 
-							"model" -> "nsfw-v1.0",
-							"lang" -> "en"))
+					"urls" -> Array("http://www.clarifai.com/img/metro-north.jpg",
+									"http://www.clarifai.com/img/metro-north.jpg"), 
+					"model" -> "nsfw-v1.0",
+					"lang" -> "en"))
 	val tag:TagResp = tagRet match {
 		case Left(err) => null
 		case Right(res) => res

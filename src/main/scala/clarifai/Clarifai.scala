@@ -9,6 +9,8 @@ object Config {
   val version = "v1"
 }
 
+
+
 // main client api class
 class ClarifaiClient(id: String, secret: String) {
   val clientID = id
@@ -20,18 +22,55 @@ class ClarifaiClient(id: String, secret: String) {
     * 
     */
 
+  // FEEDBACK
+  def feedback(feedbackReq: Map[String, Any]): Either[Option[String], FeedbackResp] = {
+    if ((!feedbackReq.contains("url") || feedbackReq.get("url").get.asInstanceOf[Array[String]].length < 1 )
+      && (!feedbackReq.contains("docids") || feedbackReq.get("docids").get.asInstanceOf[Array[String]].length < 1 )) {
+      return Left(Some("Needs at least one url or docid"))
+    }
+
+    if (feedbackReq.contains("url") && feedbackReq.contains("docids")) {
+      return Left(Some("Request must provide exactly one of the following fields: urls or docids"))
+    }
+
+    // parse query data
+    var data = ""
+    data = data.concat(_extractStrArrWithAmp(feedbackReq, "add_tags"))
+    data = data.concat(_extractStrArrWithAmp(feedbackReq, "remove_tags"))
+    data = data.concat(_extractStrArrWithAmp(feedbackReq, "similar_docids"))
+    data = data.concat(_extractStrArrWithAmp(feedbackReq, "dissimilar_docids"))
+    data = data.concat(_extractStrArrWithAmp(feedbackReq, "search_click"))
+    data = data.concat(_extractStrArrWithAmp(feedbackReq, "url"))
+    data = data.concat(_extractStrArrWithAmp(feedbackReq, "docids"))
+    data = data.dropRight(1) // remove the last "&" character
+    println(data)
+    val response = _commonHTTPRequest(Some(data), "feedback", "POST", false)
+
+    response match {
+      case Left(err) => Left(err)
+      case Right(result) => {
+        val rmap = JSON.parseFull(result).get.asInstanceOf[Map[String, Any]]
+        // response object
+        Right(
+          FeedbackResp(
+            rmap.get("status_code").get.asInstanceOf[String],
+            rmap.get("status_msg").get.asInstanceOf[String]
+          )
+        )
+      }
+    }
+  }
+
   // COLOR - Beta
   def color(colorReq: Array[String]): Either[Option[String], ColorResp] = {
-    // needs at least one url
     if (colorReq.length < 1 ) {
       return Left(Some("Needs at least one url"))
     }
 
+    // parse query data
     var data = ""
     // convert urls array into string
-    for (str <- colorReq) {
-      data = data.concat("url=" + str + "&")
-    }
+    for (str <- colorReq) { data = data.concat("url=" + str + "&") }
     data = data.dropRight(1) // remove the last "&" character  
 
     val response = _commonHTTPRequest(Some(data), "color", "POST", false)
@@ -156,29 +195,23 @@ class ClarifaiClient(id: String, secret: String) {
 
   // TAG
   def tag(infoReq: Map[String, Any]): Either[Option[String], TagResp] = {
-    // needs at least one url
-    if (!infoReq.contains("urls") || infoReq.get("urls").get.asInstanceOf[Array[String]].length < 1 ) {
+    if (!infoReq.contains("url") || infoReq.get("url").get.asInstanceOf[Array[String]].length < 1 ) {
       return Left(Some("Needs at least one url"))
     }
 
+    // parse query data
     var data = ""
-    // check for model parameter
-    if (infoReq.contains("model")) {
-      data = data.concat("model=" + infoReq.get("model").get.asInstanceOf[String] + "&")
-    }
-    // check for language paramter
-    if (infoReq.contains("language")) {
-      data = data.concat("language=" + infoReq.get("language").get.asInstanceOf[String] + "&")
-    }
+    data = data.concat(_extractStringWithAmp(infoReq, "model"))
+    data = data.concat(_extractStringWithAmp(infoReq, "language"))
     // TODO: select classes
-    // convert urls array into string
-    for (str <- infoReq.get("urls").get.asInstanceOf[Array[String]]) {
+    // TODO
+    for (str <- infoReq.get("url").get.asInstanceOf[Array[String]]) {
       data = data.concat("url=" + str + "&")
     }
     data = data.dropRight(1) // remove the last "&" character
-
+  
     val response = _commonHTTPRequest(Some(data), "tag", "POST", false)
-
+    
     response match {
       case Left(err) => Left(err)
       case Right(result) => {
@@ -202,7 +235,7 @@ class ClarifaiClient(id: String, secret: String) {
             item.get("local_id").get.asInstanceOf[String],
             TagResultRes(
               TagResultResTag(
-                res_tag.get("concept_ids").get.asInstanceOf[List[String]],
+                //res_tag.get("concept_ids").get.asInstanceOf[List[String]],
                 res_tag.get("classes").get.asInstanceOf[List[String]],
                 res_tag.get("probs").get.asInstanceOf[List[Double]]
               )
@@ -333,4 +366,28 @@ class ClarifaiClient(id: String, secret: String) {
   def _setThrottle(throttle:Boolean) = {
     throttled = throttle
   }
+
+  def _extractStringWithAmp(obj: Map[String, Any], field: String): String = {
+    if (obj.contains(field)) {
+      field + "=" + obj.get(field).get.asInstanceOf[String] + "&"
+    }
+    else {
+      ""
+    }
+  }
+
+  def _extractStrArrWithAmp(obj: Map[String, Any], field: String): String= {
+    if (obj.contains(field)) {
+      var data = field + "="
+      for (str <- obj.get(field).get.asInstanceOf[Array[String]]) {
+        data = data.concat(str + ",")
+      }
+      data = data.dropRight(1) // remove the last "," character
+      data + "&"
+    }
+    else {
+      ""
+    }
+  }
+
 }

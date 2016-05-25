@@ -17,10 +17,10 @@ val info:InfoResp = infoRet match {
 // tag endpoint
 // model and lang parameters are optional
 val tagRet = client.tag(Map(
-						"urls" -> Array("http://www.clarifai.com/img/metro-north.jpg",
-										"http://www.clarifai.com/img/metro-north.jpg"), 
-						"model" -> "nsfw-v1.0",
-						"lang" -> "en"))
+							"url" -> Array("http://www.clarifai.com/img/metro-north.jpg",
+											"http://www.clarifai.com/img/metro-north.jpg"), 
+							"model" -> "nsfw-v1.0",
+							"language" -> "en"))
 val tag:TagResp = tagRet match {
 	case Left(err) => null
 	case Right(res) => res
@@ -29,6 +29,16 @@ val tag:TagResp = tagRet match {
 // usage endpoint
 val usageRet = client.usage()
 val usage:UsageResp = usageRet match {
+	case Left(err) => null
+	case Right(res) => res
+}
+
+// feedback endpoint
+val feedbackRet = client.feedback(Map(
+									   "url" -> Array("http://www.clarifai.com/img/metro-north.jpg",
+									   				   "http://www.clarifai.com/img/metro-north.jpg"),
+									  	"add_tags" -> Array("cat", "animal")))
+val feedback:UsageResp = feedbackRet match {
 	case Left(err) => null
 	case Right(res) => res
 }

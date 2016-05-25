@@ -53,7 +53,7 @@ case class TagResultRes(
   tag: TagResultResTag
 )
 case class TagResultResTag(
-  conceptIDs: List[String],
+  //conceptIDs: List[String],
   classes: List[String],
   probs: List[Double]
 )
@@ -75,6 +75,12 @@ case class UsageResultUT(
   limit: Double,
   units: String,
   waitTime: Double
+)
+
+// feedback endpoint
+case class FeedbackResp(
+  statusCode: String,
+  statusMessage: String
 )
 
 // color endpoint
