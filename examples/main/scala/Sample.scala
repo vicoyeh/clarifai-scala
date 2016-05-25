@@ -38,7 +38,7 @@ object Sample extends App {
 										   "url" -> Array("http://www.clarifai.com/img/metro-north.jpg",
 										   				   "http://www.clarifai.com/img/metro-north.jpg"),
 										  	"add_tags" -> Array("cat", "animal")))
-	val feedback:UsageResp = feedbackRet match {
+	val feedback:FeedbackResp = feedbackRet match {
 		case Left(err) => null
 		case Right(res) => res
 	}
