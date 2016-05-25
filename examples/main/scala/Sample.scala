@@ -8,19 +8,19 @@ object Sample extends App {
 	// create a client instance
 	val client = new ClarifaiClient(id, secret)
 	// info endpoint
-	val ret = client.info()
-	val result:InfoResp = ret match {
-	    case Left(err) => null
-	    case Right(res) => res
+	val infoRet = client.info()
+	val info:InfoResp = infoRet match {
+		case Left(err) => null
+		case Right(res) => res
 	}
 
 	// tag endpoint
 	// model and lang parameters are optional
 	val tagRet = client.tag(Map(
-					"urls" -> Array("http://www.clarifai.com/img/metro-north.jpg",
-									"http://www.clarifai.com/img/metro-north.jpg"), 
-					"model" -> "nsfw-v1.0",
-					"lang" -> "en"))
+								"url" -> Array("http://www.clarifai.com/img/metro-north.jpg",
+												"http://www.clarifai.com/img/metro-north.jpg"), 
+								"model" -> "nsfw-v1.0",
+								"language" -> "en"))
 	val tag:TagResp = tagRet match {
 		case Left(err) => null
 		case Right(res) => res
@@ -29,6 +29,16 @@ object Sample extends App {
 	// usage endpoint
 	val usageRet = client.usage()
 	val usage:UsageResp = usageRet match {
+		case Left(err) => null
+		case Right(res) => res
+	}
+
+	// feedback endpoint
+	val feedbackRet = client.feedback(Map(
+										   "url" -> Array("http://www.clarifai.com/img/metro-north.jpg",
+										   				   "http://www.clarifai.com/img/metro-north.jpg"),
+										  	"add_tags" -> Array("cat", "animal")))
+	val feedback:UsageResp = feedbackRet match {
 		case Left(err) => null
 		case Right(res) => res
 	}
