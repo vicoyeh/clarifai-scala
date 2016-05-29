@@ -15,3 +15,39 @@ libraryDependencies := {
       libraryDependencies.value :+ "org.scalaj" %% "scalaj-http" % "2.3.0"
   }
 }
+
+publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value)
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+
+publishMavenStyle := true
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ => false }
+
+pomExtra := (
+  <url>https://github.com/vic317yeh/clarifai-scala</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>git@github.com:vic317yeh/clarifai-scala</url>
+    <connection>scm:git:git@github.com:vic317yeh/clarifai-scala.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>vic317yeh</id>
+      <name>Vic Yeh</name>
+      <url>https://github.com/vic317yeh</url>
+    </developer>
+  </developers>
+)
