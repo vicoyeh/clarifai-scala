@@ -1,4 +1,5 @@
 # Clarifai Scala Client
+[<img src="https://img.shields.io/travis/scala/scala-parser-combinators.svg"/>](https://travis-ci.org/vic317yeh/clarifai-scala)
 Scala client wrapper for the Clarifai image and video recognition API.
 
 The client wrapper constructor takes two parameters: client_id and client_secret. You can find these values in your developer application page. To learn more about Clarifai image and video recognition API, check out the Clarifai developer page: https://developer.clarifai.com.

@@ -4,7 +4,6 @@ version := "1.0.0"
 
 scalaVersion := "2.11.1"
 
-
 libraryDependencies := {
   CrossVersion.partialVersion(scalaVersion.value) match {
     // if scala 2.11+ is used...
