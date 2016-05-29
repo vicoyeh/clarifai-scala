@@ -17,15 +17,49 @@ sbt console
 import clarifai._
 val client = new  ClarifaiClient("<client_id>", "<client_secret>")
 
-// info endpoint
+// get the version of Clarifai API
+val infoRet = client.info()
+if (infoRet.isRight) {
+	val info:InfoResp = infoRet.right.get
+	println("API version is " + info.results.apiVersion)
+} else {
+	println("Error: " + infoRet.left.get)
+}
+
+// tag an image using url
+val url = Array("http://www.clarifai.com/img/metro-north.jpg")
+val tagRet = client.tag(Map("url" -> url))
+val tag:TagResp = tagRet match {
+	case Left(err) => {
+		println("Error: " + err)
+		System.exit(0)
+		null
+	}
+	case Right(res) => res
+}
+// get API model
+println("API model is " + tag.meta.tag.model)
+// get the list of classes and probabilities for the given image
+val firstImg = tag.results.head
+val classes = firstImg.result.tag.classes.toArray
+val probs = firstImg.result.tag.probs.toArray
+for (i <- 0 to (classes.length - 1)) {
+	println(classes(i) + ": " + probs(i))
+}
+```
+
+## API
+### Info
+```scala
 val infoRet = client.info()
 val info:InfoResp = infoRet match {
 	case Left(err) => null
 	case Right(res) => res
 }
+```
 
-// tag endpoint
-// model and lang parameters are optional
+### Tag
+```scala
 val tagRet = client.tag(Map(
 							"url" -> Array("http://www.clarifai.com/img/metro-north.jpg",
 											"http://www.clarifai.com/img/metro-north.jpg"), 
@@ -35,15 +69,19 @@ val tag:TagResp = tagRet match {
 	case Left(err) => null
 	case Right(res) => res
 }
+```
 
-// usage endpoint
+### Usage
+```scala
 val usageRet = client.usage()
 val usage:UsageResp = usageRet match {
 	case Left(err) => null
 	case Right(res) => res
 }
+```
 
-// feedback endpoint
+### Feedback
+```scala
 val feedbackRet = client.feedback(Map(
 									   "url" -> Array("http://www.clarifai.com/img/metro-north.jpg",
 									   				   "http://www.clarifai.com/img/metro-north.jpg"),
@@ -52,8 +90,11 @@ val feedback:FeedbackResp = feedbackRet match {
 	case Left(err) => null
 	case Right(res) => res
 }
+```
 
-// color endpoint (Clarifai is currently beta-testing this endpoint)
+### Color (beta)
+```scala
+// (Clarifai is currently beta-testing this endpoint)
 val colorRet = client.color(Array("https://samples.clarifai.com/metro-north.jpg"))
 val color:ColorResp = colorRet match {
 	case Left(err) => null
