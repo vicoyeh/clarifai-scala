@@ -1,28 +1,69 @@
 package clarifai
 
+/** The MIT License (MIT)
+  Copyright (c) 2016 Kuan-Hsuan Yeh, Ji Min Kim
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  */
+
+/** Imports scalaj library for handling HTTP request & response. */
 import scalaj.http._
 import scala.util.parsing.json.JSON
 
-// configuration
+/** Configuration setting for the client wrapper. */
 object Config {
   val baseURL = "https://api.clarifai.com"
   val version = "v1"
 }
 
-
-
-// main client api class
+/** Client wrapper for accessing Clarifai endpoints.
+  *
+  * Currently supports the following endpoints:
+  * - Tag
+  * - Feedback
+  * - Color (beta)
+  * - Info
+  * - Usage
+  * You would need a Clarifai developer account for using the service.
+  * Developer page: https://developer.clarifai.com
+  *
+  * @constructor create a new client object for accessing endpoints.
+  * @param id client id for your Clarifai API applicaiton
+  * @param secret client secret for your Clarifai API applicaiton
+  */
 class ClarifaiClient(id: String, secret: String) {
   val clientID = id
   val clientSecret = secret
   var accessToken = "unassigned"
   var throttled = false
 
-  /** Main Clarifai endpoints
+  /** High-level functions for accessing Clarifai endpoints.
     * 
+    * The following functions allow users to access the Clarifai service directly
+    * and receive the response in JSON-like class structure.
     */
 
-  // FEEDBACK
+  /** Feedback - provides the ability to give feedback to the API about images and videos that were previously tagged.
+    * 
+    * @param Map of values for providing feedback to the API
+    * @return Feedback response from the Clarifai endpoint 
+    */
   def feedback(feedbackReq: Map[String, Any]): Either[Option[String], FeedbackResp] = {
     if ((!feedbackReq.contains("url") || feedbackReq.get("url").get.asInstanceOf[Array[String]].length < 1 )
       && (!feedbackReq.contains("docids") || feedbackReq.get("docids").get.asInstanceOf[Array[String]].length < 1 )) {
@@ -33,7 +74,7 @@ class ClarifaiClient(id: String, secret: String) {
       return Left(Some("Request must provide exactly one of the following fields: urls or docids"))
     }
 
-    // parse query data
+    /** Converts the user input into string format. */
     var data = ""
     data = data.concat(_extractStrArrWithAmp(feedbackReq, "add_tags"))
     data = data.concat(_extractStrArrWithAmp(feedbackReq, "remove_tags"))
@@ -42,15 +83,17 @@ class ClarifaiClient(id: String, secret: String) {
     data = data.concat(_extractStrArrWithAmp(feedbackReq, "search_click"))
     data = data.concat(_extractStrArrWithAmp(feedbackReq, "url"))
     data = data.concat(_extractStrArrWithAmp(feedbackReq, "docids"))
-    data = data.dropRight(1) // remove the last "&" character
-    println(data)
+    data = data.dropRight(1) // Removes the last "&" character.
+
+    /** Sends the HTTP request. */
     val response = _commonHTTPRequest(Some(data), "feedback", "POST", false)
 
+    /** Returns the HTTP response into JSON-like class structure. */
     response match {
       case Left(err) => Left(err)
       case Right(result) => {
         val rmap = JSON.parseFull(result).get.asInstanceOf[Map[String, Any]]
-        // response object
+
         Right(
           FeedbackResp(
             rmap.get("status_code").get.asInstanceOf[String],
@@ -61,20 +104,25 @@ class ClarifaiClient(id: String, secret: String) {
     }
   }
 
-  // COLOR - Beta
+  /** Color (beta) - retrieves the dominant colors present in your images or videos. 
+    * 
+    * @param Array of urls for color detection
+    * @return Color response from the Clarifai endpoint 
+    */
   def color(colorReq: Array[String]): Either[Option[String], ColorResp] = {
     if (colorReq.length < 1 ) {
       return Left(Some("Needs at least one url"))
     }
 
-    // parse query data
+    /** Converts the user input into string format. */
     var data = ""
-    // convert urls array into string
     for (str <- colorReq) { data = data.concat("url=" + str + "&") }
-    data = data.dropRight(1) // remove the last "&" character  
+    data = data.dropRight(1) // Removes the last "&" character.
 
+    /** Sends the HTTP request. */
     val response = _commonHTTPRequest(Some(data), "color", "POST", false)
     
+    /** Returns the HTTP response into JSON-like class structure. */
     response match {
       case Left(err) => Left(err)
       case Right(result) => {
@@ -88,7 +136,6 @@ class ClarifaiClient(id: String, secret: String) {
 
           colors.foreach((itemC: Map[String, Any]) => {
             val w3c_color = itemC.get("w3c").get.asInstanceOf[Map[String, Any]]
-            
             val rColor:ResultsColors = ResultsColors(
               Colorw3c(
                 w3c_color.get("hex").get.asInstanceOf[String],
@@ -120,10 +167,15 @@ class ClarifaiClient(id: String, secret: String) {
     }
   }
 
-  // INFO
+  /** Info - returns the current API details as well as any usage limits your account has.
+    * 
+    * @return Info response from the Clarifai endpoint 
+    */
   def info(): Either[Option[String], InfoResp] = {
+    /** Sends the HTTP request. */
     val response = _commonHTTPRequest(None, "info", "GET", false)
     
+    /** Returns the HTTP response into JSON-like class structure. */
     response match {
       case Left(err) => Left(err)
       case Right(result) => {
@@ -154,10 +206,15 @@ class ClarifaiClient(id: String, secret: String) {
     }
   }
 
-  // USAGE
+  /** Usage - returns your API usage for the current month and hour.
+    * 
+    * @return Usage response from the Clarifai endpoint 
+    */
   def usage(): Either[Option[String], UsageResp] = {
+    /** Sends the HTTP request. */
     val response = _commonHTTPRequest(None, "usage", "GET", false)
     
+    /** Returns the HTTP response into JSON-like class structure. */
     response match {
       case Left(err) => Left(err)
       case Right(result) => {
@@ -165,7 +222,6 @@ class ClarifaiClient(id: String, secret: String) {
         val results = rmap.get("results").get.asInstanceOf[Map[String, Any]]
         
         var utArr = List[UsageResultUT]()
-        // parse user throttles
         val uThrottles = results.get("user_throttles").get.asInstanceOf[List[Map[String, Any]]]
         uThrottles.foreach((item: Map[String, Any]) => {
           val uThrottle:UsageResultUT = UsageResultUT(
@@ -193,36 +249,38 @@ class ClarifaiClient(id: String, secret: String) {
     }
   }
 
-  // TAG
-  def tag(infoReq: Map[String, Any]): Either[Option[String], TagResp] = {
-    if (!infoReq.contains("url") || infoReq.get("url").get.asInstanceOf[Array[String]].length < 1 ) {
+  /** Tag - tags the contents of your images or videos.
+    * 
+    * @param Map of values containing images and videos for tagging
+    * @return Tag response from the Clarifai endpoint 
+    */
+  def tag(tagReq: Map[String, Any]): Either[Option[String], TagResp] = {
+    if (!tagReq.contains("url") || tagReq.get("url").get.asInstanceOf[Array[String]].length < 1 ) {
       return Left(Some("Needs at least one url"))
     }
 
-    // parse query data
+    /** Converts the user input into string format. */
     var data = ""
-    data = data.concat(_extractStringWithAmp(infoReq, "model"))
-    data = data.concat(_extractStringWithAmp(infoReq, "language"))
-    // TODO: select classes
-    // TODO
-    for (str <- infoReq.get("url").get.asInstanceOf[Array[String]]) {
+    data = data.concat(_extractStringWithAmp(tagReq, "model"))
+    data = data.concat(_extractStringWithAmp(tagReq, "language"))
+    /** TODO: select classes. */
+    for (str <- tagReq.get("url").get.asInstanceOf[Array[String]]) {
       data = data.concat("url=" + str + "&")
     }
-    data = data.dropRight(1) // remove the last "&" character
+    data = data.dropRight(1) // Removes the last "&" character.
   
     val response = _commonHTTPRequest(Some(data), "tag", "POST", false)
     
+    /** Returns the HTTP response into JSON-like class structure. */
     response match {
       case Left(err) => Left(err)
       case Right(result) => {
         val rmap = JSON.parseFull(result).get.asInstanceOf[Map[String, Any]]
         val meta = rmap.get("meta").get.asInstanceOf[Map[String, Any]]
         val meta_tag = meta.get("tag").get.asInstanceOf[Map[String, Any]]
-
         val results = rmap.get("results").get.asInstanceOf[List[Map[String, Any]]]
         var resultsArr = List[TagResult]()
         
-        // access every item in the results array
         results.foreach((item: Map[String, Any]) => {
           val res = item.get("result").get.asInstanceOf[Map[String, Any]]
           val res_tag = res.get("tag").get.asInstanceOf[Map[String, Any]]
@@ -235,7 +293,7 @@ class ClarifaiClient(id: String, secret: String) {
             item.get("local_id").get.asInstanceOf[String],
             TagResultRes(
               TagResultResTag(
-                //res_tag.get("concept_ids").get.asInstanceOf[List[String]],
+                // res_tag.get("concept_ids").get.asInstanceOf[List[String]],
                 res_tag.get("classes").get.asInstanceOf[List[String]],
                 res_tag.get("probs").get.asInstanceOf[List[Double]]
               )
@@ -243,11 +301,9 @@ class ClarifaiClient(id: String, secret: String) {
             item.get("docid_str").get.asInstanceOf[String]
           )
 
-          // add to the results array
           resultsArr :::= List(tResult)
         })
 
-        // response object
         Right(
           TagResp(
             rmap.get("status_code").get.asInstanceOf[String],
@@ -266,10 +322,14 @@ class ClarifaiClient(id: String, secret: String) {
     }
   }
 
-  /** Helper functions to handle HTTP requests and responses
-    * Clients should not invoke these functions explicitly
+  /** Functions for establishing the underlying conneciton with the Clarifai API service.
+    * 
+    * The following functions should be private. They help to establish HTTP connection 
+    * and handle the user input and response error.
     */
-  def _requestAccessToken(): Option[String]  = {
+
+  /** Requests access token from the Clarifai API service. */
+  private def _requestAccessToken(): Option[String]  = {
     val form = Seq("grant_type" -> "client_credentials", 
                     "client_id" -> clientID,
                     "client_secret" -> clientSecret)
@@ -292,7 +352,8 @@ class ClarifaiClient(id: String, secret: String) {
     None
   }
 
-  def _commonHTTPRequest(data:Option[String] ,endpoint: String, verb:String, retry: Boolean)
+  /** Sends HTTP request to the specified enpoint with the user input data. */
+  private def _commonHTTPRequest(data:Option[String] ,endpoint: String, verb:String, retry: Boolean)
         : Either[Option[String], String] = {
     val req_data = data match {
       case Some(i) => i
@@ -301,6 +362,7 @@ class ClarifaiClient(id: String, secret: String) {
 
     val url = _buildURL(endpoint)
     var response: HttpResponse[String] = null
+    /** Sends HTTP request based on the method type. */
     verb match {
       case "POST" => {
         response = Http(url).postData(req_data)
@@ -315,17 +377,13 @@ class ClarifaiClient(id: String, secret: String) {
         return Left(Some("ILLEGAL_VERB"))
       }
     }
-    
-    // for debugging purpose; check http response
-    // println(response)
 
-    // match http response code to specific functions
+    /** Matches HTTP response code to the corresponding return value. */
     response.code match {
       case 200|201 => {
         if (throttled) {
           _setThrottle(false)
         }
-        //println(response.body)
         Right(response.body)
       }
       case 401 => {
@@ -354,6 +412,7 @@ class ClarifaiClient(id: String, secret: String) {
     }
   }
 
+  /** Helper functions for modifying request and response data. */
   def _buildURL(endpoint: String): String = {
     val parts = Array(Config.baseURL, Config.version, endpoint)
     return parts.mkString("/")
@@ -382,12 +441,11 @@ class ClarifaiClient(id: String, secret: String) {
       for (str <- obj.get(field).get.asInstanceOf[Array[String]]) {
         data = data.concat(str + ",")
       }
-      data = data.dropRight(1) // remove the last "," character
+      data = data.dropRight(1) // Removes the last "," character.
       data + "&"
     }
     else {
       ""
     }
   }
-
 }
