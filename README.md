@@ -1,7 +1,7 @@
 # Clarifai Scala Client
 Scala client wrapper for the Clarifai image and video recognition API.
 
-The client wrapper constructor takes two parameters: client_id and client_secret. You can find these values in your developer application page. To learn more about Clarifai image and video recognition, check out the Clarifai developer page: https://developer.clarifai.com.
+The client wrapper constructor takes two parameters: client_id and client_secret. You can find these values in your developer application page. To learn more about Clarifai image and video recognition API, check out the Clarifai developer page: https://developer.clarifai.com.
 
 ## Installation
 
