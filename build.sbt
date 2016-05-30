@@ -2,6 +2,8 @@ name := "clarifai-scala"
 
 version := "1.0.0"
 
+organization := "com.github.vic317yeh"
+
 scalaVersion := "2.11.1"
 
 libraryDependencies := {
