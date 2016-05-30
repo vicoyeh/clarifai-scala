@@ -121,7 +121,7 @@ Response: TagResp
 			config: String
 		}
 	},
-	results: {
+	results: [{
 		docid: Double,
 		url: String,
 		statusCode: String,
@@ -134,7 +134,7 @@ Response: TagResp
   			}
 		},
 		docidStr: String
-	}
+	}]
 }
 ```
 
@@ -187,8 +187,8 @@ Map(
 	"url" or "docids" -> Array[String],
 	"add_tags" -> Array[String],
 	"remove_tags" -> Array[String],
-	"similar_docids" -> Array[String],
-	"dissimilar_docids" -> Array[String],
+	"similar_url" or "similar_docids" -> Array[String],
+	"dissimilar_url" or "dissimilar_docids" -> Array[String],
 	"search_click" -> Array[String]
 )
 url or docids: required -> Array of url or docids of image or video
@@ -218,18 +218,8 @@ val color:ColorResp = colorRet match {
 ```
 Request: Array[String]
 ```text
-Map(
-	"color" -> Array[String]
-)
-color: required -> Array of urls of image or video that present the dominant colors
+Array[String]: required -> Array of urls of image or video that present the dominant colors
 ```
-Response: UsageResp
-```text
-{
-	statusCode: String,
-	statusMessage: String
-}
-
 Response: UsageResp
 ```text
 {
