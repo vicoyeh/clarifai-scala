@@ -6,7 +6,11 @@ Scala client wrapper for the Clarifai image and video recognition API.
 The client wrapper constructor takes two parameters: client_id and client_secret. You can find these values in your developer application page. To learn more about Clarifai image and video recognition API, check out the Clarifai developer page: https://developer.clarifai.com.
 
 ## Installation
-todo
+### sbt
+Include the following line in your build.sbt
+```scala
+libraryDependencies += "com.github.vic317yeh" %% "clarifai-scala" % "1.0.0"
+```
 
 ## Dependency
 This client wrapper uses [scalaj-http](https://github.com/scalaj/scalaj-http) for handling HTTP request and response.
