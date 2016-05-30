@@ -6,6 +6,8 @@ organization := "com.github.vic317yeh"
 
 scalaVersion := "2.11.1"
 
+crossScalaVersions := Seq("2.9.3", "2.10.4", "2.11.1")
+
 libraryDependencies := {
   CrossVersion.partialVersion(scalaVersion.value) match {
     // if scala 2.11+ is used...
