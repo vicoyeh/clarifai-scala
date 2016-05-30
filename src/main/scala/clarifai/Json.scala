@@ -72,7 +72,7 @@ case class UsageResults(
 case class UsageResultUT(
   name: String,
   consumed: Double,
-  consumed_percentage: Double,
+  consumedPercentage: Double,
   limit: Double,
   units: String,
   waitTime: Double
